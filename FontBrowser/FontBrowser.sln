@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontBrowser", "FontBrowser.csproj", "{40D0EA74-45F6-4559-98B2-8DF7235FE435}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40D0EA74-45F6-4559-98B2-8DF7235FE435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D0EA74-45F6-4559-98B2-8DF7235FE435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D0EA74-45F6-4559-98B2-8DF7235FE435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D0EA74-45F6-4559-98B2-8DF7235FE435}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78835921-FE9D-4789-9FE8-3C3A6A8623C8}
+	EndGlobalSection
+EndGlobal
