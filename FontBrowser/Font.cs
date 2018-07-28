@@ -46,6 +46,7 @@ namespace FontBrowser
                     list.Add(g);
                 }
             }
+            list.Sort();
             return list;
         }
 
