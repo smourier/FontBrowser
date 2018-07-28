@@ -61,43 +61,43 @@ namespace FontBrowser
             list.Add(new FontProperty(nameof(GlyphTypeface.Stretch), GlyphTypeface.Stretch));
             list.Add(new FontProperty(nameof(GlyphTypeface.XHeight), GlyphTypeface.XHeight));
             list.Add(new FontProperty(nameof(GlyphTypeface.Style), GlyphTypeface.Style));
-            list.Add(new FontProperty(nameof(GlyphTypeface.StyleSimulations), GlyphTypeface.StyleSimulations));
+            list.Add(new FontProperty("Style Simulations", GlyphTypeface.StyleSimulations));
 
             if (GlyphTypeface.Copyrights.Count > 0)
             {
-                list.Add(new FontProperty(nameof(GlyphTypeface.Copyrights), string.Join(", ", GlyphTypeface.Copyrights.Select(k => k.Value))));
+                list.Add(new FontProperty("Copyright", string.Join(", ", GlyphTypeface.Copyrights.Select(k => k.Value))));
             }
 
             if (GlyphTypeface.Descriptions.Count > 0)
             {
-                list.Add(new FontProperty(nameof(GlyphTypeface.Descriptions), string.Join(", ", GlyphTypeface.Descriptions.Select(k => k.Value))));
+                list.Add(new FontProperty("Description", string.Join(", ", GlyphTypeface.Descriptions.Select(k => k.Value))));
             }
 
             if (GlyphTypeface.DesignerNames.Count > 0)
             {
-                list.Add(new FontProperty(nameof(GlyphTypeface.DesignerNames), string.Join(", ", GlyphTypeface.DesignerNames.Select(k => k.Value))));
+                list.Add(new FontProperty("Designers", string.Join(", ", GlyphTypeface.DesignerNames.Select(k => k.Value))));
             }
 
             if (GlyphTypeface.ManufacturerNames.Count > 0)
             {
-                list.Add(new FontProperty(nameof(GlyphTypeface.ManufacturerNames), string.Join(", ", GlyphTypeface.ManufacturerNames.Select(k => k.Value))));
+                list.Add(new FontProperty("Manufacturer", string.Join(", ", GlyphTypeface.ManufacturerNames.Select(k => k.Value))));
             }
 
             if (GlyphTypeface.Trademarks.Count > 0)
             {
-                list.Add(new FontProperty(nameof(GlyphTypeface.Trademarks), string.Join(", ", GlyphTypeface.Trademarks.Select(k => k.Value))));
+                list.Add(new FontProperty("Trademark", string.Join(", ", GlyphTypeface.Trademarks.Select(k => k.Value))));
             }
 
             if (GlyphTypeface.LicenseDescriptions.Count > 0)
             {
-                list.Add(new FontProperty(nameof(GlyphTypeface.LicenseDescriptions), string.Join(", ", GlyphTypeface.LicenseDescriptions.Select(k => k.Value))));
+                list.Add(new FontProperty("License", string.Join(", ", GlyphTypeface.LicenseDescriptions.Select(k => k.Value))));
             }
 
-            list.Add(new FontProperty(nameof(GlyphTypeface.StrikethroughPosition), GlyphTypeface.StrikethroughPosition));
-            list.Add(new FontProperty(nameof(GlyphTypeface.StrikethroughThickness), GlyphTypeface.StrikethroughThickness));
-            list.Add(new FontProperty(nameof(GlyphTypeface.UnderlinePosition), GlyphTypeface.UnderlinePosition));
-            list.Add(new FontProperty(nameof(GlyphTypeface.UnderlineThickness), GlyphTypeface.UnderlineThickness));
-            list.Add(new FontProperty(nameof(GlyphTypeface.EmbeddingRights), GlyphTypeface.EmbeddingRights));
+            list.Add(new FontProperty("Strikethrough Position", GlyphTypeface.StrikethroughPosition));
+            list.Add(new FontProperty("Strikethrough Thickness", GlyphTypeface.StrikethroughThickness));
+            list.Add(new FontProperty("Underline Position", GlyphTypeface.UnderlinePosition));
+            list.Add(new FontProperty("Underline Thickness", GlyphTypeface.UnderlineThickness));
+            list.Add(new FontProperty("Embedding Rights", GlyphTypeface.EmbeddingRights));
             list.Add(new FontProperty(nameof(GlyphTypeface.Symbol), GlyphTypeface.Symbol));
             list.Add(new FontProperty(nameof(GlyphTypeface.Weight), GlyphTypeface.Weight));
             return list;
