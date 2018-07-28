@@ -3,17 +3,79 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FontBrowser"
-        mc:Ignorable="d"
-        Title="Font Browser" Height="450" Width="800">
-    <StackPanel Orientation="Horizontal">
-        <ListView Name="LV" SelectionChanged="LV_SelectionChanged" SelectionMode="Single">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="300" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <DockPanel Name="DP"></DockPanel>
-    </StackPanel>
+        Title="Font Browser" ResizeMode="CanResize" WindowStartupLocation="CenterScreen">
+    <Grid MinHeight="600" MinWidth="1200">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Name="MainMenu" IsMainMenu="True">
+            <MenuItem Header="_File" Height="24">
+                <MenuItem Header="Open Font(s) Location..." Name="OpenLocation" Click="OpenLocation_Click" />
+                <MenuItem Header="Open System's Fonts" Name="OpenSystem" Click="OpenSystem_Click" />
+                <Separator />
+                <MenuItem Header="Exit" Name="Exit" Click="Exit_Click" />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="About..." Name="About" Click="About_Click" />
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ListBox Name="LB" SelectionChanged="LB_SelectionChanged" SelectionMode="Single">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Grid Name="FNT" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <ListView ItemsSource="{Binding Properties}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Header="Value" Width="900" DisplayMemberBinding="{Binding Value}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" />
+
+                <ListBox Grid.Row="2" Name="LBG" ItemsSource="{Binding Glyphs}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseDoubleClick="LBG_MouseDoubleClick">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="1" BorderBrush="LightGray" Height="100" Width="100">
+                                <StackPanel Orientation="Vertical">
+                                    <Path Fill="Black" Data="{Binding Geometry}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-60,0,0">
+                                        <Path.LayoutTransform>
+                                            <ScaleTransform CenterX="0" CenterY="0" ScaleX="3" ScaleY="3" />
+                                        </Path.LayoutTransform>
+                                    </Path>
+                                    <TextBlock FontFamily="Lucida Console" FontSize="12" Text="{Binding CodePointText, Mode=OneWay}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+            </Grid>
+        </Grid>
+    </Grid>
 </Window>
