@@ -13,5 +13,7 @@ namespace FontBrowser
         public Geometry Geometry { get; }
         public int CodePoint { get; }
         public string CodePointText => CodePoint + ", 0x" + CodePoint.ToString("X4");
+
+        public override string ToString() => CodePointText;
     }
 }

@@ -59,12 +59,12 @@
                         <DataTemplate>
                             <Border BorderThickness="1" BorderBrush="LightGray" Height="100" Width="100">
                                 <StackPanel Orientation="Vertical">
-                                    <Path Fill="Black" Data="{Binding Geometry}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-60,0,0">
+                                    <TextBlock FontFamily="Lucida Console" FontSize="12" Text="{Binding CodePointText, Mode=OneWay}" Foreground="Blue" HorizontalAlignment="Center" />
+                                    <Path Fill="Black" Data="{Binding Geometry}" HorizontalAlignment="Center" Margin="0,50,0,0">
                                         <Path.LayoutTransform>
                                             <ScaleTransform CenterX="0" CenterY="0" ScaleX="3" ScaleY="3" />
                                         </Path.LayoutTransform>
                                     </Path>
-                                    <TextBlock FontFamily="Lucida Console" FontSize="12" Text="{Binding CodePointText, Mode=OneWay}" Foreground="Blue" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                                 </StackPanel>
                             </Border>
                         </DataTemplate>
